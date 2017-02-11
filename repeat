@@ -1,0 +1,28 @@
+var api;
+// Function to call for the repeating
+function handleChatMsg() {
+// This sets the interval of 5 minutes, and calls the variable. Edit the numbers after the comma to change the interval. You MUST put it into milliseconds.
+setInterval(function(){xyz()}, 15000); 
+// This sets the variable, edit the text in "api.Messages.send" to change what the bot repeats.
+var xyz = function()
+{
+    api.Messages.send("Testing...")
+}
+}
+
+
+// defines some information about the plugin, and sets up stuff we need.
+module.exports = {
+    meta_inf: {
+        name: "Repeat Message",
+        version: "1.1.1",
+        description: "Repeats a message every 5 minutes. Message and interval can be changed.",
+        author: "ZX6R"
+    },
+load: function (_api) {
+      api = _api;
+  },
+    start: function () {
+        handleChatMsg();
+    }
+}
